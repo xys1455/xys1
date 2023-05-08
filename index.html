@@ -136,6 +136,62 @@
         position: absolute;
         top: -10px;
       }
+              .wrapper{
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+        .box{
+            flex: 1;
+            position: relative;
+            transition: 0.5s ease;
+        }
+        .box-y{
+            background-color: yellow;
+        }
+        .box-p{
+            background-color: pink;
+        }
+        .box-g{
+            background-color: green;
+        }
+        .box:hover,
+        .box:active,
+        .box:focus{
+            flex: 3;
+        }
+        .box:hover .title,
+        .box:active .title,
+        .box:focus .title{
+            transform: translate(-50%, -50%) rotate(0);
+            color: #fff;
+            font-size: 6rem;
+            letter-spacing: 20px;
+        }
+        .box .title{
+            font-family: "one";
+            font-size: 5rem;
+            letter-spacing: 10px;
+            left: 50%;
+            margin: 0;
+            position: absolute;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            transition: 0.5s ease;
+        }
+        @media screen and (min-width: 1000px) {
+            .box .title{
+                transform: translate(-50%, -50%) rotate(90deg);
+            }
+            .box:hover .title,
+        .box:active .title,
+        .box:focus .title{
+            transform: translate(-50%, -50%) scale(1.25);
+            }
+            .wrapper{
+                flex-direction: row;
+            }
+        }
     </style>
 </head>
   <div  style="width: 100vw;height: 100vh;display: flex;justify-content: center;background-color: #00a8ff;">
@@ -146,5 +202,16 @@
       <div class="w"></div>
     </div>
   </div>
+  <div class="wrapper">
+        <div class="box box-y">
+            <h2 class="title">1</h2>
+        </div>
+        <div class="box box-p">
+            <h2 class="title">2</h2>
+        </div>
+        <div class="box box-g">
+            <h2 class="title">3</h2>
+        </div>
+    </div>
 </body>
 </html>
