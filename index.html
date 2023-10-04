@@ -771,6 +771,32 @@
         0 0 40px #fff,
         inset 0 40px #fff;
     }
+
+    .img {
+      display: block;
+    }
+
+    #main {
+      width: 500px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+      position: relative;
+      overflow: hidden;
+    }
+
+    #mirror {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      border: 5px solid #fff;
+      overflow: hidden;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    #mirror img {
+      position: absolute;
+    }
   </style>
 </head>
 
@@ -1020,6 +1046,35 @@
   <div style="background: #000;height: 100vh;">
     <h1 class="neon" style="margin: auto;">HEON</h1>
   </div>
+  <diV
+    style="display: flex;justify-content: center;align-items: center;height: 100vh;background-color: rgba(255,190,221,0.5);">
+    <div id="main">
+      <img src="one.jpg" class="img" width="100%">
+      <div id="mirror">
+        <img src="one.jpg" class="img">
+      </div>
+    </div>
+  </diV>
+
+  <script>
+    let oMain = document.querySelector('#main');
+    let oMirror = document.querySelector('#mirror');
+    let oBigimg = document.querySelector('#mirror img');
+
+    oMain.addEventListener('mousemove', e => {
+      let x_left = e.clientX - oMain.offsetLeft;
+      let y_top = e.clientY - oMain.offsetTop + 1 + 'px';
+
+      oMirror.style.left = x_left - oMirror.offsetWidth / 2 + 'px';
+      oMirror.style.top = y_top - oMirror.offsetHeight / 2 + 'px';
+
+      let bigImgLeft = oBigimg.offsetWidth / oMain.offsetWidth * x_left - oMirror.offsetWidth / 2;
+      let bigImgTop = oBigimg.offsetHeight / oMain.offsetHeight * y_top - oMirror.offsetHeight / 2;
+
+      oBigimg.style.left = -bigImgLeft + 'px';
+      oBigimg.style.top = -bigImgTop + 'px';
+    });
+  </script>
 </body>
 
 </html>
