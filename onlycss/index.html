@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Put your description here." />
+  <title>第二页</title>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" />
+  <link rel="stylesheet" href="./my.css">
+</head>
+
+<body>
+  <div style="height: 100vh">
+    <two style="
+          width: 200px;
+          height: 200px;
+          background-color: red;
+          border-radius: 15px;
+          box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.7);
+          position: absolute;
+          top: 300px;
+          left: 100px;
+        ">
+      <b style="display: flex; justify-content: center">你好</b>
+      <a style="display: flex; justify-content: center" href="https://xys1455.github.io/xys1/jujiao/index.html">第三页</a>
+    </two>
+  </div>
+  <script>
+    let oDiv = document.querySelector("two");
+    let flag = false;
+    oDiv.addEventListener("mousedown", (e) => {
+      flag = true;
+      let x = e.offsetX;
+      let y = e.offsetY;
+      document.addEventListener("mousemove", (e) => {
+        let two_h = window.innerHeight - oDiv.offsetHeight;
+        let two_w = window.innerWidth - oDiv.offsetWidth;
+        let two_left = e.clientX - x;
+        let two_top = e.clientY - y;
+        two_top = Math.min(Math.max(0, two_top), two_h);
+        two_left = Math.min(Math.max(0, two_left), two_w);
+        if (flag) {
+          oDiv.style.top = two_top + "px";
+          oDiv.style.left = two_left + "px";
+        }
+      });
+    });
+
+    oDiv.addEventListener("mouseup", () => {
+      flag = false;
+    });
+  </script>
+  <div style="
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        background-color: #00a8ff;
+      ">
+    <div id="water"></div>
+  </div>
+  <div style="
+        background-color: rgb(20, 19, 19);
+        display: flex;
+        height: 100vh;
+        width: 100vw;
+      ">
+    <div class="bottle">
+      <div class="w"></div>
+    </div>
+  </div>
+  <div class="wrapper">
+    <div class="box box-y">
+      <h2 class="title">1</h2>
+    </div>
+    <div class="box box-p">
+      <h2 class="title">2</h2>
+    </div>
+    <div class="box box-g">
+      <h2 class="title">3</h2>
+    </div>
+  </div>
+  <div style="
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      ">
+    <div class="bounceBall">
+      <div class="ball"></div>
+      <div class="shadow"></div>
+    </div>
+  </div>
+  <div style="
+        width: 100%;
+        height: 100vh;
+        background-color: black;
+        display: flex;
+        flex-direction: column;
+      ">
+    <div class="b">
+      <div class="top"></div>
+      <div class="content">
+        <span style="--i: 0"></span>
+        <span style="--i: 1"></span>
+        <span style="--i: 2"></span>
+        <span style="--i: 3"></span>
+      </div>
+    </div>
+  </div>
+  <div style="background-color: #f3f2ff; width: 100vw; height: 100vh">
+    <button class="btn"><img src="download-icon.png" />Download</button>
+  </div>
+  <div style="height: 100vh">
+    <div class="q"></div>
+  </div>
+  <div style="height: 100vh">
+    <div class="middle">
+      <a class="bt" href="#">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+      <a class="bt" href="#">
+        <i class="fab fa-twitter"></i>
+      </a>
+      <a class="bt" href="#">
+        <i class="fab fa-google"></i>
+      </a>
+      <a class="bt" href="#">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a class="bt" href="#">
+        <i class="fab fa-youtube"></i>
+      </a>
+    </div>
+  </div>
+  <div style="
+        height: 100vh;
+        font-family: 'Montserrat';
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #34495e;
+      " class="text">
+    <span>t</span>
+    <span>e</span>
+    <span>x</span>
+    <span>t</span>
+  </div>
+  <div style="
+        font-size: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #222;
+        color: #fff;
+        overflow: hidden;
+        height: 100vh;
+      ">
+    <div class="container">
+      <div class="container-box">
+        <!-- 第一面 -->
+        <div class="cube-side side-front">
+          <!-- 定义css变量 -->
+          <div class="cube-grid" style="--c: var(--c1)"></div>
+        </div>
+        <!-- 添加第二面 -->
+        <div class="cube-side side-back">
+          <div class="cube-grid" style="--c: var(--c2)"></div>
+        </div>
+        <!-- 第三面 -->
+        <div class="cube-side side-right">
+          <div class="cube-grid" style="--c: var(--c3)"></div>
+        </div>
+        <!-- 第四面 -->
+        <div class="cube-side side-left">
+          <div class="cube-grid" style="--c: var(--c4)"></div>
+        </div>
+        <!-- 第五面 -->
+        <div class="cube-side side-top">
+          <div class="cube-grid" style="--c: var(--c5)"></div>
+        </div>
+        <!-- 第六面 -->
+        <div class="cube-side side-bottom">
+          <div class="cube-grid" style="--c: var(--c6)"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div style="height: 100vh; background-color: #1d1c1c; display: flex">
+    <div class="contents">HTML CSS JAVESCRIPT</div>
+  </div>
+  <div style="display: flex; margin: 0; min-height: 100vh">
+    <div class="scalable">
+      <div class="contentss">
+        <img src="ss.png" />
+      </div>
+      <div class="separator">
+        <i></i>
+        <i></i>
+      </div>
+    </div>
+    <div class="main">
+      <div class="contentss">
+        <img src="jingse.png" />
+      </div>
+    </div>
+  </div>
+  <script>
+    let startX, startWidth;
+    let $ = (tag) => document.querySelector(tag);
+
+    let getWidth = () => {
+      return parseInt(window.getComputedStyle($(".scalable")).width);
+    };
+
+    startWidth = localStorage.getItem("s_width") || getWidth();
+    $(".scalable").style.width = startWidth + "px";
+
+    let startDrag = (e) => {
+      startX = e.clientX;
+      startWidth = getWidth();
+
+      document.documentElement.addEventListener("mousemove", onDrag);
+      document.documentElement.addEventListener("mouseup", stopDrag);
+    };
+    $(".separator").addEventListener("mousedown", startDrag);
+
+    let onDrag = (e) => {
+      let newWidth = e.clientX - startX + startWidth;
+      $(".scalable").style.width = newWidth + "px";
+    };
+    let stopDrag = () => {
+      localStorage.setItem("s_width", getWidth());
+      document.documentElement.removeEventListener("mousemove", onDrag);
+      document.documentElement.removeEventListener("mouseup", stopDrag);
+    };
+  </script>
+  <div style="
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        text-decoration: none;
+        color: #000;
+        user-select: none;
+        width: 100vw;
+        height: 100vh;
+        background: #ecf0f1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      ">
+    <one></one>
+  </div>
+  <div style="background: #000;height: 100vh;">
+    <h1 class="neon" style="margin: auto;">HEON</h1>
+  </div>
+  <diV
+    style="display: flex;justify-content: center;align-items: center;height: 100vh;background-color: rgba(255,190,221,0.5);">
+    <div id="main">
+      <img src="one.jpg" class="img" width="100%">
+      <div id="mirror">
+        <img src="one.jpg" class="img">
+      </div>
+    </div>
+  </diV>
+
+  <script>
+    let oMain = document.querySelector('#main');
+    let oMirror = document.querySelector('#mirror');
+    let oBigimg = document.querySelector('#mirror img');
+
+    oMain.addEventListener('mousemove', e => {
+      let x_left = e.clientX - oMain.offsetLeft;
+      let y_top = e.clientY - oMain.offsetTop + 1 + 'px';
+
+      oMirror.style.left = x_left - oMirror.offsetWidth / 2 + 'px';
+      oMirror.style.top = y_top - oMirror.offsetHeight / 2 + 'px';
+
+      let bigImgLeft = oBigimg.offsetWidth / oMain.offsetWidth * x_left - oMirror.offsetWidth / 2;
+      let bigImgTop = oBigimg.offsetHeight / oMain.offsetHeight * y_top - oMirror.offsetHeight / 2;
+
+      oBigimg.style.left = -bigImgLeft + 'px';
+      oBigimg.style.top = -bigImgTop + 'px';
+    });
+  </script>
+  <div style="display: flex;justify-content: center;align-items: center;height: 100vh;background-color: #000;">
+    <div class="containers">
+      <!-- 添加15个音频标签 定义css变量，表示延迟时间,一共是15个标签，中间位置为8，所以设置
+        第八个位置延迟为0-->
+      <span style="--d: 7"></span>
+      <span style="--d: 6"></span>
+      <span style="--d: 5"></span>
+      <span style="--d: 4"></span>
+      <span style="--d: 3"></span>
+      <span style="--d: 2"></span>
+      <span style="--d: 1"></span>
+      <span style="--d: 0"></span>
+      <span style="--d: 1"></span>
+      <span style="--d: 2"></span>
+      <span style="--d: 3"></span>
+      <span style="--d: 4"></span>
+      <span style="--d: 5"></span>
+      <span style="--d: 6"></span>
+      <span style="--d: 7"></span>
+    </div>
+  </div>
+  <div style="font-family: consolas;display: flex;align-items: center;justify-content: center;min-height: 100vh;
+              background: #355463;overflow: hidden;">
+    <div class="road">
+      <div class="police">
+        <div class="light_beam"></div>
+        <h4>Police</h4>
+        <h3>Police</h3>
+        <div class="side_mirror"></div>
+        <span>
+          <b></b>
+          <i></i>
+        </span>
+      </div>
+      <div class="police">
+        <div class="light_beam"></div>
+        <h4>Police</h4>
+        <h3>Police</h3>
+        <div class="side_mirror"></div>
+        <span>
+          <b></b>
+          <i></i>
+        </span>
+      </div>
+      <div class="taxi">
+        <div class="light_beam"></div>
+        <div class="side_mirror"></div>
+        <span>
+          <b></b>
+          <i></i>
+        </span>
+      </div>
+    </div>
+  </div>
+  <div
+    style="display: flex;justify-content: center;background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);height: 100vh;">
+    <div class="planet">
+      <div class="circle-line1"></div>
+      <div class="circle-line2"></div>
+      <div class="circle-line3"></div>
+    </div>
+  </div>
+</body>
+
+</html>
