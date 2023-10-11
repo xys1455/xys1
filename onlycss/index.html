@@ -398,6 +398,68 @@
     // 执行
     getData();
   </script>
+  <div style="background: #1f1f47">
+    <div class="containe">
+      <div class="card">
+        <h1 class="title"></h1>
+        <p class="subtitle">
+        </p>
+        <button class="btnn"></button>
+      </div>
+      <div class="blob"></div>
+    </div>
+  </div>
+  <div style=" display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  font-family: sans-serif;
+                  flex-wrap: wrap;
+                  background-color: #222;
+                  gap: 20px;
+                  min-height: 100vh;">
+    <p class="btnl">Awesome</p>
+    <p class="btnl">Button</p>
+  </div>
+
+  <script>
+    const btns = document.querySelectorAll('.btnl')
+
+    btns.forEach(btn => {
+      btn.onclick = function (e) {
+        const x = e.pageX - e.target.offsetLeft
+        const y = e.pageY - e.target.offsetTop
+        const ripples = document.createElement('spanl')
+        let color = '#' + Math.floor(Math.random() * 0xFFFFFF).toString(16)
+        ripples.style.left = x + 'px'
+        ripples.style.top = y + 'px'
+        ripples.style.borderColor = color
+
+        this.appendChild(ripples)
+
+        setTimeout(() => {
+          ripples.remove()
+        }, 2000)
+      }
+    })
+  </script>
+  <div style="display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background: #27282c;
+        flex-direction: column;
+        gap: 40px">
+    <abc style="--clr:#1e9bff"><span style="position: relative;z-index: 1;">Button</span>
+      <iii></iii>
+    </abc>
+    <abc style="--clr:#ff1867"><span style="position: relative;z-index: 1;">Button</span>
+      <iii></iii>
+    </abc>
+    <abc style="--clr:#6eff3e"><span style="position: relative;z-index: 1;">Button</span>
+      <iii></iii>
+    </abc>
+  </div>
+
 </body>
 
 </html>
