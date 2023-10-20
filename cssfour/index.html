@@ -5,15 +5,15 @@
     <meta charset="utf-8">
     <title>第四页</title>
     <link rel="stylesheet" href="four.css">
+    <link rel="stylesheet" href="four.js">
 </head>
 
 <body>
-    <one style="  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background-color: #434750;">
+    <one>
         <ul>
+            <li style="--i:7;">
+                <a href="https://xys1455.github.io/xys1/heka/index.html">第五页</a>
+            </li>
             <li style="--i:6;">
                 <p>Home</p>
             </li>
@@ -34,16 +34,58 @@
             </li>
         </ul>
     </one>
-    <two style="display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background-color: #222;">
+    <two>
         <div class="loader"></div>
     </two>
-    <three style="background-color: black;display: flex;justify-content: center;align-items: center;height: 100vh;">
+    <three>
         <div class="three"></div>
     </three>
+    <four>
+        <div class="loade">
+            <div style="--i:0;"></div>
+            <div style="--i:1;"></div>
+            <div style="--i:2;"></div>
+            <div style="--i:3;"></div>
+            <div style="--i:4;"></div>
+        </div>
+    </four>
+    <five>
+        <div class="container">
+            <!-- 第一个默认选中 -->
+            <div class="item active" style="--n: 0">
+                <span class="iconfont">&#xe611;</span>
+                <p>三明治</p>
+            </div>
+            <div class="item" style="--n: 1">
+                <span class="iconfont">&#xe65e;</span>
+                <p>汉堡</p>
+            </div>
+            <div class="item" style="--n: 2">
+                <span class="iconfont">&#xe698;</span>
+                <p>沙冰</p>
+            </div>
+            <div class="item" style="--n: 3">
+                <span class="iconfont">&#xe65c;</span>
+                <p>可乐</p>
+            </div>
+            <!-- 添加选中圆环 -->
+            <div class="active-box" style="--n: 0"></div>
+        </div>
+        <script>const list = document.querySelectorAll(".item");
+            let node = document.getElementsByClassName("active-box")[0];
+
+            function clickActive() {
+                list.forEach((item) => {
+                    item.classList.remove("active");
+                });
+                this.classList.add("active");
+                node.style.setProperty("--n", this.style.getPropertyValue("--n").trim());
+            }
+            list.forEach((item) => {
+                item.addEventListener("click", clickActive);
+            });
+        </script>
+    </five>
 </body>
 
 </html>
