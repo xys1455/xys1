@@ -8,6 +8,13 @@ body {
   flex-direction: column;
 }
 /* one */
+one {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #434750;
+}
 @import url("https://fonts.googleapis.com/css?family=Oswald:400,700");
 one ul {
   position: relative;
@@ -71,6 +78,13 @@ one ul li:last-child::after {
   box-shadow: -120px 120px 20px rgba(0, 0, 0, 0.25);
 }
 /* two */
+two {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #222;
+}
 .loader {
   position: absolute;
   width: 400px;
@@ -151,6 +165,13 @@ one ul li:last-child::after {
   }
 }
 /* three */
+three {
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
 :root {
   /* 定义全局变量 圆弧的宽度 */
   --w: 200px;
@@ -195,4 +216,188 @@ three div::before {
     /* 1turn 即为360deg */
     transform: rotate(1turn);
   }
+}
+/* four */
+four {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #2f3542;
+}
+.loade {
+  width: 100px;
+  position: relative;
+}
+
+.loade div {
+  width: 30px;
+  height: 30px;
+  background: #0abde3;
+  position: absolute;
+  left: calc(var(--i) * 30px);
+  animation: four 2s linear infinite;
+  animation-delay: calc(var(--i) * -400ms);
+}
+
+@keyframes four {
+  0% {
+    left: 150px;
+    top: 0px;
+  }
+
+  80% {
+    left: 0px;
+    top: 0px;
+  }
+
+  85% {
+    left: 0px;
+    top: -30px;
+    width: 30px;
+    height: 30px;
+  }
+
+  88% {
+    left: 0px;
+    top: -30px;
+  }
+
+  90% {
+    width: 60px;
+    height: 25px;
+  }
+
+  95% {
+    left: 150px;
+    top: -30px;
+    width: 30px;
+    height: 30px;
+  }
+
+  99% {
+    left: 150px;
+    top: -30px;
+  }
+
+  100% {
+    left: 0px;
+    top: 0px;
+  }
+}
+/* five */
+five {
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #222;
+  color: #fff;
+  overflow: hidden;
+  height: 100vh;
+}
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+/* 定义全局变量 */
+:root {
+  --color: #222;
+  --bg: orange;
+  --w: 100px;
+  --t: 450px;
+  --c: 70px;
+}
+
+.container {
+  background: #fff;
+  width: var(--t);
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  position: relative;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: var(--w);
+  cursor: pointer;
+}
+
+.item span {
+  font-size: 20px;
+  position: relative;
+  z-index: 1;
+  /* 添加过渡效果 */
+  transition: all 0.5s;
+}
+
+.item p {
+  position: absolute;
+  font-size: 15px;
+  font-weight: bold;
+  color: var(--color);
+  transform: translateY(20px);
+  /* 添加过渡效果 */
+  transition: all 0.5s;
+  /* 默认透明度为0，不显示 */
+  opacity: 0;
+}
+
+/* 添加hover事件，以及选中样式 */
+.item:hover p,
+.item.active p {
+  opacity: 1;
+  transform: translateY(12px);
+}
+
+.item:hover span,
+.item.active span {
+  transform: translateY(-35px);
+}
+
+.active-box {
+  position: absolute;
+  width: var(--c);
+  height: var(--c);
+  background: var(--bg);
+  --left-pad: calc(var(--t) - (4 * var(--w)));
+  top: -50%;
+  left: calc((var(--left-pad) / 2) + (var(--w) / 2) - (var(--c) / 2));
+  border-radius: 50%;
+  border: 4px solid var(--color);
+  /* 添加过渡效果 */
+  transition: all 0.5s;
+  /* 设置选中圆环的transform */
+  transform: translateX(calc(var(--w) * var(--n)));
+}
+
+.active-box::before,
+.active-box::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 20px;
+  height: 20px;
+  background: transparent;
+}
+
+.active-box::before {
+  left: -20px;
+  border-radius: 0 20px 0 0;
+  box-shadow: 0 -10px 0 0 var(--color);
+}
+
+.active-box::after {
+  right: -20px;
+  border-radius: 20px 0 0 0;
+  box-shadow: 0 -10px 0 0 var(--color);
 }
