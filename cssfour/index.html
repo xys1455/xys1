@@ -86,6 +86,30 @@
             });
         </script>
     </five>
+    <seven>
+        <h1 class="glowIn">一段文本</h1>
+        <p class="glowIn">
+            HYHHYHHYHHYHHYHHYHHYHHYHHYHHYHHYHHYHHYHHYHHYHHYHHYHHYHHYHHYH
+            HYHHYHHYHHYHHYHHYHHYHHYHHYHHYHHYHHYHHYHHYHHYHHYHHYHHYHHYHHYH
+            HYHHYHHYHHYHHYHHYHHYHHYHHYHHYHHYHHYHHYHHYHHYHHYHHYHHYHHYHHYH
+        </p>
+        <script>
+            let textBoxs = document.querySelectorAll(".glowIn");
+
+            textBoxs.forEach(item => {
+                let txts = item.textContent.split("");
+
+                item.textContent = "";
+
+                txts.forEach((txt, i) => {
+                    let span = document.createElement("span");
+                    span.textContent = txt;
+                    span.style.animationDelay = `${i * 0.05}s`
+                    item.append(span)
+                })
+            })
+        </script>
+    </seven>
 </body>
 
 </html>
