@@ -401,3 +401,44 @@ five {
   border-radius: 20px 0 0 0;
   box-shadow: 0 -10px 0 0 var(--color);
 }
+/* seven */
+seven {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: black;
+}
+
+seven p {
+  margin: 0 20%;
+}
+
+.glowIn {
+  color: white;
+}
+
+.glowIn span {
+  animation: fade 0.5s both;
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+
+  65% {
+    opacity: 1;
+    text-shadow: 0 0 25px white;
+  }
+
+  75% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0.7;
+  }
+}
